@@ -12,7 +12,7 @@ class User(Base):
     email      = models.EmailField(max_length=250)
     password   = models.CharField(max_length=250, null=True)
     has_agreed = models.BooleanField(default=False)
-    kakao_id   = models.PositiveIntegerField()
+    kakao_id   = models.PositiveIntegerField(null=True)
 
     class Meta:
         db_table = 'users'
