@@ -5,7 +5,7 @@ from users.models import Base, User
 class Accommodation(Base):
     name           = models.CharField(max_length=250)
     description    = models.CharField(max_length=250)
-    price          = models.DecimalField(decimal_places=2, max_digits=4)
+    price          = models.DecimalField(decimal_places=2, max_digits=10)
     address        = models.CharField(max_length=250)
     region         = models.CharField(max_length=30)
     is_verified    = models.BooleanField(default=False)
@@ -20,6 +20,9 @@ class Accommodation(Base):
 class AccommodationImage(Base):
     accommodation = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
     image_url     = models.CharField(max_length=250)
+
+    class Meta:
+        db_table = 'accommodation_images'
 
 class ThemaGroup(Base):
     accommodation = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
