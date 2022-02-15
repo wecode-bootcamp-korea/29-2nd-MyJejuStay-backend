@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'users',
+    'accommodations',
+    'reservations',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +148,6 @@ CORS_ALLOW_HEADERS = (
     'dnt',
     'origin',
     'user-agent',
-    'x-csrftoken',
+    'x-csrftokgien',
     'x-requested-with',    		
 )
