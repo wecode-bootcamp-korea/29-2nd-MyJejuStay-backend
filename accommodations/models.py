@@ -11,16 +11,17 @@ class Accommodation(Base):
     is_verified    = models.BooleanField(default=False)
     latitude       = models.DecimalField(decimal_places=7, max_digits=10)
     longtitude     = models.DecimalField(decimal_places=7, max_digits=10)
-    check_in_time  = models.DateTimeField()
-    check_out_time = models.DateTimeField()
+    check_in_time  = models.TimeField()
+    check_out_time = models.TimeField()
     minimum_stay   = models.PositiveIntegerField(default=1)
+    detail_description = models.TextField(blank=True)
 
     class Meta:
         db_table = 'accommodations'
 
 class AccommodationImage(Base):
     accommodation = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
-    image_url     = models.CharField(max_length=250)
+    image_url     = models.CharField(max_length=250, null=True)
 
     class Meta:
         db_table = 'accommodation_images'
