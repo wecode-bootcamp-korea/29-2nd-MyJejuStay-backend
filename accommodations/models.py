@@ -13,10 +13,7 @@ class Accommodation(Base):
     longtitude     = models.DecimalField(decimal_places=7, max_digits=10)
     check_in_time  = models.DateTimeField()
     check_out_time = models.DateTimeField()
-<<<<<<< HEAD
     minimum_stay   = models.PositiveIntegerField(default=1)
-=======
->>>>>>> a3c41a7 (Add: Initial Models)
 
     class Meta:
         db_table = 'accommodations'
@@ -30,11 +27,7 @@ class AccommodationImage(Base):
 
 class ThemaGroup(Base):
     accommodation = models.ForeignKey(Accommodation, on_delete=models.CASCADE)
-<<<<<<< HEAD
     name          = models.CharField(max_length=50)
-=======
-    type          = models.PositiveIntegerField()
->>>>>>> a3c41a7 (Add: Initial Models)
 
     class Meta:
         db_table = 'thema_groups'
