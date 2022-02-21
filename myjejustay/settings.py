@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'accommodations',
     'reservations',
+    'main',
     'django_extensions',
 ]
 
