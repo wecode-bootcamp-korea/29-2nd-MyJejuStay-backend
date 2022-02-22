@@ -58,16 +58,18 @@ class KakaoLoginView(View):
       kakao_account_response = requests.get('https://kapi.kakao.com/v2/user/me', headers = {'Authorization': f'Bearer {access_token}'}, timeout = 2)
 
       kakao_account = kakao_account_response.json()
-      name     = kakao_account['kakao_account']['profile']['nickname'],
-      kakao_id = kakao_account['id']
-      email = 'ckdgus1011@gamil.com'
-      #  email    = kakao_account['kakao_account']['email']
+      name          = kakao_account['kakao_account']['profile']['nickname'],
+      kakao_id      = kakao_account['id']
+      email         = kakao_account['kakao_account']['email']
 
       user, is_created = User.objects.get_or_create(
         name       = name,
         kakao_id   = kakao_id,
         email      = email,
-        has_agreed = True
+        has_agreed = True,
+#           defaults = {
+# 
+#           }
       )
       
       access_token = jwt.encode({'user_id' :  kakao_id}, settings.SECRET_KEY, settings.ALGORITHMS)
