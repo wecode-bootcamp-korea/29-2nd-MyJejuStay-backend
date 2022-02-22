@@ -5,8 +5,10 @@ __pycache__
 .gitignore
 csv_reader.py
 get-docker.sh
-myjejustay - accommodation.csv:Zone.Identifier
-myjejustay - accommodation_image.csv:Zone.Identifier
+*.Identifier
+ckdgus11021.pem
+Dockerfile
+*.sh
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,vim,macos,linux,zsh
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,visualstudiocode,vim,macos,linux,zsh
